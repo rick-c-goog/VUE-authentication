@@ -27,7 +27,7 @@ const store = createStore({
   actions: {
       async register(context, { email, password, name}){
           const response = await createUserWithEmailAndPassword(auth, email, password)
-          const dbstore=getFireStore()
+          const dbstore=getFirestore()
           if (response) {
               context.commit('SET_USER', response.user)
               //response.user.updateProfile({displayName: name})
